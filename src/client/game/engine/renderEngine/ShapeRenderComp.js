@@ -1,6 +1,6 @@
-import RenderComponent from './RenderComponent';
+import RenderComp from './RenderComp';
 
-export default class ShapeRenderComp extends RenderComponent {
+export default class ShapeRenderComp extends RenderComp {
   //shape is a shape object, fill is a "rgb(255,255,255)" string
   constructor(shape, fillStyle) {
     super();

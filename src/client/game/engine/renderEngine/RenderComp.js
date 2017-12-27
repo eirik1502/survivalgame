@@ -1,6 +1,6 @@
 import Component from '../core/Component';
 
-export default class RenderComponent extends Component {
+export default class RenderComp extends Component {
   constructor() {
     super();
   }
@@ -8,14 +8,18 @@ export default class RenderComponent extends Component {
   //override
   addedToEngine(e) {
     super.addedToEngine(e);
-    this.engine.renderEngine.addRenderComp(this);
+    this.engine.renderEngine.addRenderComp(this.owner, this);
+  }
+
+  start() {
+    super.start();
   }
 
   //override
   end() {
     super.end();
 
-    this.engine.renderEngine.removeRenderComp(this);
+    this.engine.renderEngine.removeRenderComp(this.owner, this);
   }
 
   //overridden, takes a canvas 2d context as argument

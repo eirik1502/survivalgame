@@ -1,9 +1,13 @@
 import Component from './Component';
+import TransformComp from './TransformComp';
 
 export default class GameObject {
-  constructor(name) {
+  constructor(name = '') {
     this.name = name;
     this.components = new Map();
+
+    //add a default transform comp
+    this.addComponent(new TransformComp());
   }
 
   //when added to engine
@@ -49,6 +53,19 @@ export default class GameObject {
 
     return this.components.delete(compType);
   }
+
+  getComponent(compType, compName = '') {
+    if (compName === '') {
+      //just find the one with the right type
+      return this.components.get(compType);
+    }
+    throw new Error('get component by name not supported');
+  }
+
+  getComponents(compType, compName = '') {}
+
+  //returns all components of the type given and of inhereting types
+  getSubComponents(superCompType) {}
 
   update() {
     this.componentsSafeForEach(o => o.update());

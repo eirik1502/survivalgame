@@ -1,4 +1,4 @@
-import Component from './core/Component';
+import Component from './engine/core/Component';
 
 export default class TimeoutComp extends Component {
   constructor(lifetime) {

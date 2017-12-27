@@ -1,5 +1,5 @@
-import Component from './core/Component';
-import TransformComp from './core/TransformComp';
+import Component from './engine/core/Component';
+import TransformComp from './engine/core/TransformComp';
 
 export default class AutomoveComp extends Component {
   constructor(x, y) {
